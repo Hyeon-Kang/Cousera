@@ -57,3 +57,25 @@ Supervised Learning with Neural Networks
 [supervised_learning_example.jpg]
 
 가장 중요한 것은 신경망이 올바른 x,y 값을 갖는 것
+
+
+
+standard nn : 전통적인 방식
+
+Convolutional nn : 이미지 데이터
+
+Recurrent nn : 시간적인 요소를 포함한 일차원적 데이터 ???
+
+[Neual Network example.jpg]
+
+
+
+structed data VS unstructed data1
+
+정형화된 데이터는 우리가 알고 있는 DB 테이블 처럼 명확한 데이터가
+
+비정형 데이터 audio, image, text 등 형식이 없는 데이터 (휴리스틱)
+
+
+
+신경망이 지도학습에 미친 영향
