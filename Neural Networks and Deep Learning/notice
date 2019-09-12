@@ -29,3 +29,31 @@ Deep Learning,, refers to training Neural Networks
 ReLu 함수 (Rectified Linear Unit) 정류된?? -> 0을 최대값으로 갖는
 
 신경세포(예측 요소)를 쌓으면서 더 큰 신경망을 갖춘다.
+
+이렇게 갖춰진 신경망에 입력과 출력을 트레이닝세트에 도입 시키면 된다.
+(hidden layer는 알아서 해결해준다!)
+
+x 값을 토대로 y값을 예측
+
+지도학습의 예시?
+
+
+
+
+Supervised Learning with Neural Networks
+
+자주 쓰이는 예시
+
+* 지도학습 (Supervised Learning)
+
+1) 집값 예측
+2) 온라인 광고 예측 (유저 정보 : 입력, 적절한 광고 : 출력)
+3) Image (사진 분석, tagging)
+4) 음성분석
+5) 문장 번역
+6) 자율 주행
+등등등!
+
+[supervised_learning_example.jpg]
+
+가장 중요한 것은 신경망이 올바른 x,y 값을 갖는 것
