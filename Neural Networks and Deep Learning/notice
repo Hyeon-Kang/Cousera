@@ -79,3 +79,54 @@ structed data VS unstructed data1
 
 
 신경망이 지도학습에 미친 영향
+
+
+
+
+Why is Deep Learning taking off?
+
+왜 딥러닝이 떴을까?
+
+초기 딥러닝 분야는 방대한 데이터와 처리능력으로 성능을 올렸다.
+
+알고리즘의 진화 sigmoid func -> ReLu func
+
+시그모이드 함수는 양 끝의 기울기가 0에 가까워진다.
+
+문제는 기울기가 0에 근접한 부분에서 학습 속도가 매우 느려진다는 것
+
+gradient descent
+
+
+RelU 함수를 도입할 경우 양수영역의 값이 0으로 줄어드는 확률이 급격히 감소
+(학습 속도 유지)
+
+-> 알고리즘 발전
+
+
+
+
+nn 성능 증가? 데이터 양 늘리기? 네트워크 증가?
+
+이런 행위는 한계가 있다. (데이터의 한계 or 네트워크가 너무 커져서 연산이 버거움)
+
+
+
+About this Course
+
+Week01
+
+기본기 다지는 과정
+1) 딥러닝 소개
+2) 문제풀이
+
+Week02
+1) 신경망 프로그래밍 구조 : foward propagation, back propagation
+2) 신경망을 효과적으로 도입하는 방법?
+3) 프로그래밍, 알고리즘 도입
+
+Week03
+1) 신경망 네트워크 프로그래밍의 프레임워 -> hidden layer 코드
+
+Week04
+1) 심층신경망, 심화학습
