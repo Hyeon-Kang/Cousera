@@ -1,0 +1,31 @@
+Neural Networks and Deep Learning
+
+https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome
+
+
+
+190913 Week01
+
+Introduction to deep learning
+
+개요 소개
+
+1. 고양이 인식기 예제
+2. 딥러 동작, 파라미터 튜닝 등 최적화
+3. 딥러닝 모델 전략, 프로젝트 구조 (엔드 투 엔드 딥러닝)
+  언제 써야 할까??, 응용 사례??
+
+4. CNN (주로 이미지 분야에 적용)
+5. sequence 모델을 자연어 처리 (NLP)나 다른 분야에 적용하는 (RNN, LSTM 등)
+
+
+
+What is a neural network?
+
+Deep Learning,, refers to training Neural Networks
+
+신경망이란?
+
+ReLu 함수 (Rectified Linear Unit) 정류된?? -> 0을 최대값으로 갖는
+
+신경세포(예측 요소)를 쌓으면서 더 큰 신경망을 갖춘다.
