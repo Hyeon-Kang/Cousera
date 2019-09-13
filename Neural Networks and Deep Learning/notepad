@@ -185,3 +185,72 @@ W와 B 파라미터
 W : nx dimensional
 
 B : real number
+
+Loss(error) function 제곱오류랑 비슷함
+
+L function이 유효값 y를 갖는 경우 djfaksk 정확히 y(hat) 결과값을 산출하는지 정의할 때 사용
+
+L(y(hat),y) = 1/2(y(hat),y)^2
+
+Lfunction을 사용해서 안정적인 최적화 가능 (최적화 하기 더 쉬워짐)
+
+if y=1 : L(y(hat), y) = -log y(hat)
+y(hat) 을 최대한 크게 (1과 가깝게) 하는 것이 좋다.
+
+if y=0 : L(y(hat), y) = -log(1-y(hat))
+만약 y가 0인 경우, loss 함수의 첫 항은 0이 됨
+
+L(y(hay), y) = -(y log y(hat) + (1-y) log(1-y(hat)))
+                요기가 0
+
+
+러닝 단계에서 loss 함수를 작게 만들려고 하는 것은 (if y=0)
+
+log (1-y(hat)) 의 값이 최대한 크게 하는 것과 같다.
+
+앞에 '-' 부호를 고려
+
+=> loss 함수가 y(hat)의 값을 최대한 작게 하려 함과 같다.
+
+
+y 값을 0으로 지정하면 loss 함수는 y(hat)이 최대한 0에 가까운 값이 나오도록 함
+
+
+
+Cost function : J(w, b)
+
+[cost_function.jpg]
+
+[cost_function_fix.png]
+
+로지스틱 회귀분석법은 자체적으로 아주 작은 신경망 네트워크로 볼 수 있다.
+
+로지스틱 회귀분석 추가 : https://3months.tistory.com/327
+
+                       : https://medium.com/qandastudy/mathpresso-%EB%A8%B8%EC%8B%A0-%EB%9F%AC%EB%8B%9D-%EC%8A%A4%ED%84%B0%EB%94%94-4-%ED%9A%8C%EA%B7%80-%EB%B6%84%EC%84%9D-regression-2-4f938f1f1c2d
+
+
+정리 질문
+
+Q:
+What is the difference between the cost function and the loss function for logistic regression?
+
+A:
+The loss function computes the error for a single training example;
+the cost function is the average of the loss functions of the entire training set.
+
+
+loss func : 한 텀의 학습 예제 오류
+cost func : 전체 학습 에제 오류의 평균, 주요파라미터를 통한 cost func 계산 (w, b)
+
+
+
+
+
+
+
+Gradient Descent
+
+로지스틱 회귀분석법
+  - loss function : single trainig set에서 오류 계산
+  - cost function : 모든 training set에서 오류 계산
