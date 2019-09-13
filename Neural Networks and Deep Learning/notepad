@@ -163,3 +163,25 @@ Binary Classification
 
 
 Logistic Regression
+
+
+이진분류 문제
+
+x가 고양이 사진 (특징벡터)인 경우 y 는 x가 고양이일 확률
+
+output y =  (sigmoid) (w(transpose)x + b)
+
+sigmoid(z) = 1/1+e^(-z)
+
+e^-z 에서 z가 클 수록 0에 근접함
+
+따라서 1/1에 근접하므로 z가 클 수록 시그모이드 곡선이 1에 근접함
+
+반대로 z가 음수의 큰 값을 가지게 된 다면 1/1+매우 큰 값 = 0에 근접
+
+W와 B 파라미터
+
+
+W : nx dimensional
+
+B : real number
