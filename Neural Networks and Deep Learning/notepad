@@ -249,6 +249,9 @@ cost func : 전체 학습 에제 오류의 평균, 주요파라미터를 통한 
 
 
 
+
+
+
 Gradient Descent
 
 로지스틱 회귀분석법
