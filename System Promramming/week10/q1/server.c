@@ -18,7 +18,7 @@ int main (void) {
       memset( (char *) &sin, '\0', sizeof(sin));
       sin.sin_family = AF_INET; // 인터네트워크 통신 소켓 사용
       sin.sin_port = htons(PORTNUM); // 서버 접근 포트
-      sin.sin_addr.s_addr = inet_addr("210.115.230.183"); // 서버 IP 주소
+      sin.sin_addr.s_addr = inet_addr("168.188.54.212"); // 서버 IP 주소
       // loop back ip로 할까?
 
       // 소켓 생성(아직 데이터 안 들어감)
@@ -28,14 +28,14 @@ int main (void) {
       }
 
       // 위에서 지정한 IP 및 포트번호를 소켓에 연결
-      if (bind(sd, (struct sockaddr *) &sin, sizeof(sin))) {
+      if (bind(sd, (struct sockaddr *) &sin, sizeof(sin)) == -1) {
             perror("bind");
             exit(1);
       }
 
       // 클라이언트 접속을 기다림
       // (클라이언트 요청 받을 준비가 되었음을 운영체제에 알림)
-      if (listen(sd, 5)) {
+      if (listen(sd, 5) == -1) {
             perror("listen");
             exit(1);
       }
@@ -50,7 +50,7 @@ int main (void) {
 
             // 클라이언트 주소 출력 (상대방 주소 출력)
             sprintf(buf, "%s", inet_ntoa(cli.sin_addr));
-            printf("*** Send a Message to Client(&s)\n", buf);
+            printf("** Send a Message to Client : %s\n", buf);
 
             strcpy(buf, "Welcome to Network Server!");
 
