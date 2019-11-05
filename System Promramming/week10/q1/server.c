@@ -40,25 +40,28 @@ int main (void) {
             exit(1);
       }
 
+      // 클라이언트 접속 허가
+      if ((ns = accept(sd, (struct sockaddr *)&cli, &clientlen)) == -1) {
+            perror("accept");
+            exit(1);
+      } // 새로운 소켓 기술자 리턴
+
+      // 클라이언트 주소 출력 (상대방 주소 출력)
+      sprintf(buf, "%s", inet_ntoa(cli.sin_addr));
+      printf("** 새로운 호스트 접속 : %s\n", buf);
+
+      strcpy(buf, "Welcome to Network Server!");
+
+      // 클라이언트에게 환영 메시지 전송
+      if(send(ns, buf, strlen(buf) +1, 0) == -1) {
+            perror("send");
+            exit(1);
+      }
+
+
       while (1) { // 서버는 무한 반복으로 서비스 제공
 
-            // 클라이언트 접속 허가
-            if ((ns = accept(sd, (struct sockaddr *)&cli, &clientlen)) == -1) {
-                  perror("accept");
-                  exit(1);
-            } // 새로운 소켓 기술자 리턴
 
-            // 클라이언트 주소 출력 (상대방 주소 출력)
-            sprintf(buf, "%s", inet_ntoa(cli.sin_addr));
-            printf("** Send a Message to Client : %s\n", buf);
-
-            strcpy(buf, "Welcome to Network Server!");
-
-            // 클라이언트에게 환영 메시지 전송
-            if(send(ns, buf, strlen(buf) +1, 0) == -1) {
-                  perror("send");
-                  exit(1);
-            }
 
             // 클라이언트로부터 메시지 수신
             if(recv(ns, buf, strlen(buf), 0) == -1) {
@@ -66,10 +69,24 @@ int main (void) {
                   exit(1);
             }
             // 클라로부터 받은 메시지 출력
-            printf("** From Client : %s", buf);
-            close(ns); // 서비스가 끝났으므로 소켓 닫기
-      }
+            printf("** From Client : %s \n", buf);
 
+            if (strncmp(buf,"/quit",5) == 0 ){
+                  printf("통신 종료\n");
+                  break;
+            }
+
+            // 클라이언트로 메시지 전송
+            printf("to Client : ");
+            gets(buf);
+            if(send(ns, buf, sizeof(buf) + 1, 0) == -1) {
+                  perror("send");
+                  exit(1);
+            }
+
+            printf("\n");
+      }
+      close(ns); // 서비스가 끝났으므로 소켓 닫기
       close(sd); // 접속 받는 용도로 사용한 소켓 닫기 (서버측)
 
       return 0;
